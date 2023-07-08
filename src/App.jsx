@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ItemListContainer from "./views/ItemListContainer/ItemListContainer.jsx";
 import ItemDetailContainer from "./views/ItemDetailContainer/ItemDetailContainer.jsx";
 import ShoppingCart from "./views/ShoppingCart/ShoppingCart.jsx";
-import Checkout from "./views/CheckoutPage/Checkout.jsx";
+import NotFound from "./views/NotFoundPage/NotFound.jsx";
 
 //Components
 import NavBar from "./components/NavBar/NavBar.jsx";
@@ -24,7 +24,7 @@ class App extends React.Component {
               <Route exact path="/category/:categoryId" element={<ItemListContainer />}/>
               <Route exact path="/item/:id" element={<ItemDetailContainer />}/>
               <Route exact path="/cart" element={<ShoppingCart/>} />
-              <Route exact path="/checkout" element={<Checkout/>} />
+              <Route exact path="*" element={<NotFound/>} />
             </Routes>
           <Footer/>
         </BrowserRouter>

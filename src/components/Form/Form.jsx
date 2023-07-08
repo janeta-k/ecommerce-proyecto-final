@@ -1,15 +1,22 @@
 import { useState } from "react";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { useCartContext } from "../../context/CartContext";
+import PropTypes from "prop-types";
 import "./Form.css";
 
-const Form = () => {
-    const { cart, totalPrice, setCart} = useCartContext();
+const Form = ({existeId}) => {
+    const { cart, totalPrice} = useCartContext();
     const [orderId, setOrderId] = useState(null);
+    console.log("order ID: ", orderId)
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
-    
+    const [email, setEmail] = useState("");
+    const [checkEmail, setCheckEmail] = useState("");
+
+    let existOrderId = false
+    if(orderId != ""){
+        existOrderId = true
+    }
 
     const db = getFirestore();
 
@@ -33,22 +40,33 @@ const Form = () => {
                 onChange={(e) => setName(e.target.value)}
             />
             <input 
+                type="number" 
+                placeholder="Número de teléfono"
+                onChange={(e) => setPhone(e.target.value)}
+            />
+            <input 
                 type="text" 
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
             />
             <input 
-                type="number" 
-                placeholder="Número de teléfono"
-                onChange={(e) => setPhone(e.target.value)}
+                type="text" 
+                placeholder="Repite tu email"
+                onChange={(e) => setCheckEmail(e.target.value)}
             />
-            <button type="submit" >Enviar</button>
+            {
+                email == checkEmail && email != "" && orderId == null ? <button type="submit" onClick={() => existeId(existOrderId)} className="boton-enviar">Enviar</button> : ""
+            }
+            
+            
         </form>
-        {/* puedo hacer un modal que muestre la id una vez se presiona el botón "finalizar compra", además de vaciar el 
-        carrito. NANANAN ve el proyecto, cuando cierra el modal se borra lo del carrito xd */}
         <p>Nro de orden: {orderId}</p>
     </div>
   );
+};
+
+Form.propTypes = {
+    existeId: PropTypes.func
 };
 
 export default Form;
