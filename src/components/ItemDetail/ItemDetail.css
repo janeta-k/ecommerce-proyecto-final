@@ -1,0 +1,10 @@
+.card-container{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: solid 1px black;
+    box-shadow: 15px 5px 10px #48529944;
+}
+
+.col-sm-4 {
+    padding: 0;
+}

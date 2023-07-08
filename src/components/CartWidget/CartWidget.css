@@ -1,0 +1,18 @@
+.cartIcon-container{
+    color: #63332f;
+    font-size: 25px;
+}
+
+.cartIcon-container:hover{
+    color: gray;
+    cursor: pointer;
+}
+
+.cartIcon{
+    height: 30px;
+    width: 30px;
+}
+
+.cart-number{
+    font-size: 15px;
+}

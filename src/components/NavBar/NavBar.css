@@ -1,0 +1,16 @@
+.nav-item{
+    color: black;
+}
+
+.nav-item:hover {
+    /* border: solid 1px lightblue; */
+    text-decoration: underline 3px lightseagreen;
+
+}
+
+.link-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
