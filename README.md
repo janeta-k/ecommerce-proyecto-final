@@ -14,3 +14,9 @@ npm install react-router-dom
 npm install react-bootstrap bootstrap
 npm install firebase
 ```
+### Ejecutar proyecto
+Para visualizar el proyecto en el navegador, debe escribir lo siguiente en la terminal: 
+```
+npm run dev
+```
+
