@@ -10,6 +10,8 @@ import NotFound from "./views/NotFoundPage/NotFound.jsx";
 //Components
 import NavBar from "./components/NavBar/NavBar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+
+//context
 import ShoppingCartContext from "./context/CartContext.jsx";
 
 

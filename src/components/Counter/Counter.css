@@ -1,0 +1,16 @@
+
+.count{
+    border: 1px solid black;
+    width: 33rem;
+    text-align: center;
+    padding-top: 5px;
+    display: inline-block;
+}
+
+.count-button{
+    width: 8.1rem;
+}
+
+.add-button{
+    width: 100%;
+}

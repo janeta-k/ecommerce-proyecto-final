@@ -57,8 +57,6 @@ const Form = ({existeId}) => {
             {
                 email == checkEmail && email != "" && orderId == null ? <button type="submit" onClick={() => existeId(existOrderId)} className="boton-enviar">Enviar</button> : ""
             }
-            
-            
         </form>
         <p>Nro de orden: {orderId}</p>
     </div>

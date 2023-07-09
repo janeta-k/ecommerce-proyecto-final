@@ -1,5 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import "./Counter.css";
 
 const Counter = ({ stock, onAdd }) => {
@@ -16,11 +18,15 @@ const Counter = ({ stock, onAdd }) => {
 
     return (
         <div>
-            <button disabled={count <= 1} onClick={decrementar}>-</button>
-            <span>{count}</span>
-            <button disabled={count >= stock} onClick={incrementar}>+</button>
+            
+            <ButtonGroup aria-label="Basic example">
+                <Button className="count-button" variant="secondary" disabled={count <= 1} onClick={decrementar}>-</Button>
+                <span className="count">{count}</span>
+                <Button className="count-button" variant="secondary" disabled={count >= stock} onClick={incrementar}>+</Button>
+            </ButtonGroup>
+            
             <div>
-                <button onClick={() => onAdd(count)}>agregar al carrito</button>
+                <Button variant="outline-info" onClick={() => onAdd(count)} className="add-button">agregar al carrito</Button>
             </div>
         </div>
     );
