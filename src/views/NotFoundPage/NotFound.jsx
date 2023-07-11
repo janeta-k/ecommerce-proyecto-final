@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import "./NotFound.css";
 
 const Checkout = () => {
   return (
-    <div>
-        <h1>PÁGINA O ENCONTRADA</h1>
-        <Link to={"/"}>
-          <h4>ir a la página principal</h4>
-        </Link>
-        
+    <div className="text-center">
+      <h2 className="mt-5 mb-5">PÁGINA NO ENCONTRADA</h2>
+      <Link to={"/"}>
+        <Button className="mb-5" variant="info">
+          ir a la página principal
+        </Button>
+      </Link>
     </div>
   );
 };

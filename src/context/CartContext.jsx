@@ -13,7 +13,7 @@ const CartContextProvider = ({children}) => {
       setCart(newCart);
     };
     
-    const clearCart = () => setCart([]);
+    //const clearCart = () => setCart([]);
     const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
     const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
 
@@ -28,7 +28,6 @@ const CartContextProvider = ({children}) => {
 
   return (
     <CartContext.Provider value={{
-      clearCart,
       isInCart,
       removeProduct,
       addToCart,

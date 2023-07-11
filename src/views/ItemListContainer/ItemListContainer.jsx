@@ -15,29 +15,33 @@ const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    //const db = getFirestore();
     const itemsCollection = collection(db, "felinusProducts");
     getDocs(itemsCollection).then((querySnapshot) => {
       const docs = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
-      setProducts(docs);    
+      setProducts(docs);
     });
   }, []);
 
-  const categoryFilter = products.filter((producto) => producto.categoria == categoryId);
-
+  const categoryFilter = products.filter(
+    (producto) => producto.categoria == categoryId
+  );
 
   return (
-    <>
+    <div className="items-container">
       <h5 className="title">La mejor calidad para tu amigo gatuno </h5>
       <Container>
         <Row>
-          {categoryId ? <ItemList productos={categoryFilter}/> : <ItemList productos={products}/>}
+          {categoryId ? (
+            <ItemList productos={categoryFilter} />
+          ) : (
+            <ItemList productos={products} />
+          )}
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 
